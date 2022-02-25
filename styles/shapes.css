@@ -1,0 +1,38 @@
+/*.responsive{
+    width:100%;
+}*/
+
+.change:hover{
+    fill:burlywood;
+    stroke:darkseagreen;
+}
+
+/* use the clip-path property to hide parts of the div (or create a clipping mask) */
+.clip-me{
+    width:200px;
+    height:200px;
+    background-color:brown;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    /* the border will be hidden by the clipping mask - because the object is still a box, just
+    part of it is hidden */
+    border:2px solid black;
+
+    /* if I float this div, the text will wrap around it */
+    float:left;
+
+    /*...but, the object is still a box - if I want it to wrap around the clipping mask, use the
+    shape-outside property, and the same value from clip-path */
+    shape-outside: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    
+    transition:all 2s;
+
+    margin:15px;
+}
+
+.clip-me:hover{
+    transform:rotate(360deg);
+}
+
+section{
+    width:400px;
+}
